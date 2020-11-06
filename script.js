@@ -1,5 +1,5 @@
 
-
+ 
 //Pulling Info from WebAPI
 function articleInfo() {
     //WebURL including APIKey
