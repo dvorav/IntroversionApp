@@ -27,3 +27,23 @@ $("#urlHtml").text("Click for full article")
 //Button click
 })}
 $("#btn").on("click", articleInfo)
+
+
+
+//Joke Api
+
+// Creating an AJAX call for the joke.
+
+let queryURL = "https://sv443.net/jokeapi/v2/joke/Any";
+
+$.ajax({
+   url: queryURL,
+   method: "GET"
+ }).then(function(joke) {
+ console.log(joke); 
+ //let jokeSetup = response.Setup
+ //var setupDiv = $("<div class='joke'>");
+ //jokeDiv.append(jokeOne);
+ //var jokeOne = $("<p>").text("Here's your joke:" + jokeReponse);
+ })
+ 
