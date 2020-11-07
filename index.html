@@ -3,83 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/reset.css" />
-    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
     <title>Introversion</title>
   </head>
   <body>
     <!--Name of the app-->
-    <div id="Introversion Banner">
-      <h1 id="Introversion-title">Introversion</h1>
+    <div id="Introversion-Banner">
+      <header id="Introversion-title">Introversion</header>
     </div>
 
+    <br />
+    <hr />
+
     <!--Tip of the Day Section Goes Here-->
-    <div class="advice section">
+
+    <div class="advice-section">
       <h1>Tip Of The Day</h1>
-      <form id="advice-form">
+      <div id="advice-form">
         <label for="advice-input">Topic For Your Daily Tip</label>
         <input type="text" id="advice-input" />
         <br />
         <button id="advice-btn">Daily Tip</button>
-        <h3 id="titleHtml"></h3>
-        <p id="abstractHtml"></p>
-        <a id="urlHtml"></a>
-        <p id="updatedTip"></p>
-      </form>
+      </div>
       <br />
       <!--The Daily Tip Goes Here-->
-      <section id="daily-tip-result">Here's Your Answer</section>
+      <section id="daily-tip-array">Here's Your Answer</section>
       <br />
     </div>
 
     <br />
     <hr />
+
     <!--Joke Section Goes Here-->
 
-    <!-- Joke APi Functions -->
-    <div class="container">
-      <h1>Joke API</h1>
-
-      <!-- Rendered Buttons will get Dumped Here  -->
-      <div id="buttons-view"></div>
-
-      <form id="joke-form">
-        <label for="joke-input">Type a Key Word</label>
+    <div class="joke-section">
+      <h1>Jokes</h1>
+      <div id="joke-form">
+        <label for="joke-input">Type A Key Word</label>
         <input type="text" id="joke-input" />
         <br />
-
-        <!-- Button triggers joke search -->
-        <input id="Search Joke" type="submit" value="Find a Joke!" />
-        <h3 id="titleHtml"></h3>
-        <p id="abstractHtml"></p>
-        <a id="urlHtml"></a>
-        <p id="updatedJoke"></p>
-      </form>
+        <button id="joke-btn">Get A Joke</button>
+      </div>
       <br />
-      <!-- Jokes will Get Dumped Here -->
-      <div id="jokes-result">Try This One</div>
+      <!--The Joke Result Goes Here-->
+      <section id="joke-result">Try This One</section>
+      <br />
+
     </div>
+
     <br />
     <hr />
 
     <!--News Section Goes Here-->
 
-    <div class="news section">
+    <div class="news-section">
       <h1>The Latest News</h1>
-      <form id="news-form">
+      <div id="news-form">
         <label for="news-input">Current Events</label>
         <input type="text" id="news-input" />
         <br />
-        <!-- News Api Functions -->
-        <button id="btn">Find Out Whats Going On</button>
-        <h3 id="titleHtml"></h3>
-        <p id="abstractHtml"></p>
-        <a id="urlHtml"></a>
-        <p id="updatedDate"></p>
-      </form>
-      <!--The News Goes Here-->
+        <button id="news-btn">Find Out Whats Going On</button>
+      </div>
+
+      <!--The News Result Goes Here-->
       <br />
-      <section id="daily-tip-result">Here's The Lastest</section>
+      <section id="daily-news-result">
+        Here's The Lastest
+        <h3 id="news-titleHtml"></h3>
+        <p id="news-abstractHtml"></p>
+        <a id="news-urlHtml"></a>
+        <p id="news-updatedDate"></p>
+      </section>
       <br />
     </div>
 
