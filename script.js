@@ -28,12 +28,10 @@ $("#urlHtml").text("Click for full article")
 })}
 $("#btn").on("click", articleInfo)
 
-
-
 //Joke Api
 
 // Creating an AJAX call for the joke.
-
+function jokesAPI() {
 const settings = {
    "async": true,
    "crossDomain": true,
@@ -45,7 +43,7 @@ const settings = {
    }
 };
 
-$("#joke-btn").on("click", function() {
+
    $.ajax(settings).done(function (response) {
       console.log(response);
       let setup = $("<p>").text(response.body[0].setup);
@@ -55,15 +53,7 @@ $("#joke-btn").on("click", function() {
       console.log(setup); 
       console.log(punchline);   
    })
-})
 
-
+}
+$("#jokes").on("click", jokesAPI);
  
-
- //console.log(response);
- //stringDadJoke = JSON.stringify(response);
- //console.log(stringDadJoke);
- //let jokeSetup = response.Setup
- //var setupDiv = $("<div class='joke'>");
- //jokeDiv.append(jokeOne);
- //var jokeOne = $("<p>").text("Here's your joke:" + jokeReponse);
