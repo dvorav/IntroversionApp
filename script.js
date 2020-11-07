@@ -28,22 +28,32 @@ $("#urlHtml").text("Click for full article")
 })}
 $("#btn").on("click", articleInfo)
 
-
-
 //Joke Api
 
 // Creating an AJAX call for the joke.
+function jokesAPI() {
+const settings = {
+   "async": true,
+   "crossDomain": true,
+   "url": "https://dad-jokes.p.rapidapi.com/random/joke",
+   "method": "GET",
+   "headers": {
+      "x-rapidapi-key": "dc7e6ef494msha69f3a48f05b80dp1609cfjsna8c047a89521",
+      "x-rapidapi-host": "dad-jokes.p.rapidapi.com"
+   }
+};
 
-let queryURL = "https://sv443.net/jokeapi/v2/joke/Any";
 
-$.ajax({
-   url: queryURL,
-   method: "GET"
- }).then(function(joke) {
- console.log(joke); 
- //let jokeSetup = response.Setup
- //var setupDiv = $("<div class='joke'>");
- //jokeDiv.append(jokeOne);
- //var jokeOne = $("<p>").text("Here's your joke:" + jokeReponse);
- })
+   $.ajax(settings).done(function (response) {
+      console.log(response);
+      let setup = $("<p>").text(response.body[0].setup);
+      let punchline = $("<p>").text(response.body[0].punchline);
+      $("#jokes-result").append(setup);
+      $("#jokes-result").append(punchline);
+      console.log(setup); 
+      console.log(punchline);   
+   })
+
+}
+$("#jokes").on("click", jokesAPI);
  
