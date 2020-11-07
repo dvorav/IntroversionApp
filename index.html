@@ -12,20 +12,22 @@
     <div id="Introversion Banner">
       <h1 id="Introversion-title">Introversion</h1>
     </div>
+    <br />
+    <hr />
 
     <!--Tip of the Day Section Goes Here-->
     <div class="advice section">
-      <h1>Tip Of The Day</h1>
-      <form id="advice-form">
+      <header>Tip Of The Day</header>
+      <div id="advice-form">
         <label for="advice-input">Topic For Your Daily Tip</label>
         <input type="text" id="advice-input" />
         <br />
         <button id="advice-btn">Daily Tip</button>
-        <h3 id="titleHtml"></h3>
-        <p id="abstractHtml"></p>
-        <a id="urlHtml"></a>
-        <p id="updatedTip"></p>
-      </form>
+        <h3 id="tip-title-Html"></h3>
+        <p id="tip-abstractHtml"></p>
+        <a id="tip-urlHtml"></a>
+        <p id="tip-updatedTip"></p>
+      </div>
       <br />
       <!--The Daily Tip Goes Here-->
       <section id="daily-tip-result">Here's Your Answer</section>
@@ -43,18 +45,18 @@
       <!-- Rendered Buttons will get Dumped Here  -->
       <div id="buttons-view"></div>
 
-      <form id="joke-form">
+      <div id="joke-form">
         <label for="joke-input">Type a Key Word</label>
         <input type="text" id="joke-input" />
         <br />
 
         <!-- Button triggers joke search -->
         <input id="Search Joke" type="submit" value="Find a Joke!" />
-        <h3 id="titleHtml"></h3>
-        <p id="abstractHtml"></p>
-        <a id="urlHtml"></a>
-        <p id="updatedJoke"></p>
-      </form>
+        <h3 id="jokes-titleHtml"></h3>
+        <p id="jokes-abstractHtml"></p>
+        <a id="jokes-urlHtml"></a>
+        <p id="jokes-updatedJoke"></p>
+      </div>
       <br />
       <!-- Jokes will Get Dumped Here -->
       <div id="jokes-resut">Try This One</div>
@@ -66,17 +68,17 @@
 
     <div class="news section">
       <h1>The Latest News</h1>
-      <form id="news-form">
+      <div id="news-form">
         <label for="news-input">Current Events</label>
         <input type="text" id="news-input" />
         <br />
         <!-- News Api Functions -->
         <button id="btn">Find Out Whats Going On</button>
-        <h3 id="titleHtml"></h3>
-        <p id="abstractHtml"></p>
-        <a id="urlHtml"></a>
-        <p id="updatedDate"></p>
-      </form>
+        <h3 id="news-titleHtml"></h3>
+        <p id="news-abstractHtml"></p>
+        <a id="news-urlHtml"></a>
+        <p id="news-updatedDate"></p>
+      </div>
       <!--The News Goes Here-->
       <br />
       <section id="daily-tip-result">Here's The Lastest</section>
