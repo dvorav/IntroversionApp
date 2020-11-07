@@ -44,14 +44,17 @@ const settings = {
       "x-rapidapi-host": "dad-jokes.p.rapidapi.com"
    }
 };
-$.ajax(settings).done(function (response) {
-   console.log(response);
-   let setup = $("<p>").text(response.body[0].setup);
-   let punchline = $("<p>").text(response.body[0].punchline);
-   $("#jokes-result").append(setup);
-   $("#jokes-result").append(punchline);
-   console.log(setup); 
-   console.log(punchline);   
+
+$("#joke-btn").on("click", function() {
+   $.ajax(settings).done(function (response) {
+      console.log(response);
+      let setup = $("<p>").text(response.body[0].setup);
+      let punchline = $("<p>").text(response.body[0].punchline);
+      $("#jokes-result").append(setup);
+      $("#jokes-result").append(punchline);
+      console.log(setup); 
+      console.log(punchline);   
+   })
 })
 
 
