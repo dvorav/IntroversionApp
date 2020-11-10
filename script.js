@@ -18,17 +18,17 @@ method: "GET",
    //console.log("Title: " + randomArticle.title + " Abstract:" + randomArticle.abstract + " Url: " + randomArticle.url)
    //Title of article
 let title = randomArticle.title;
-   $("#titleHtml").text(title)
+   $("#news-titleHtml").text(title)
 // Abstract from article
 let abstract = randomArticle.abstract;
-$("#abstractHtml").text(abstract)
+$("#news-abstractHtml").text(abstract)
 //Url for article
 let url = randomArticle.url
-$("#urlHtml").attr({"href": url, "target": "_blank"})
-$("#urlHtml").text("Click for full article")
+$("#news-urlHtml").attr({"href": url, "target": "_blank"})
+$("#news-urlHtml").text("Click for full article")
 //Button click
 })}
-$("#btn").on("click", articleInfo)
+$("#news-btn").on("click", articleInfo)
 
 //Joke Api
 
@@ -50,34 +50,39 @@ const settings = {
       console.log(response);
       let setup = $("<p>").text(response.body[0].setup);
       let punchline = $("<p>").text(response.body[0].punchline);
-      $("#jokes-result").append(setup);
-      $("#jokes-result").append(punchline);
+      $("#joke-result").append(setup);
+      $("#joke-result").append(punchline);
       console.log(setup); 
       console.log(punchline);   
    })
 
 }
 
-let convoAmount = 0
-
-// Update convoAmount each time button is clicked and set item to local storage
-function addUpDailyConvo () {
-   convoAmount++;
-   console.log(convoAmount)
-   localStorage.setItem("Daily Interactions", convoAmount)
+function convoCounter () {
+   if (typeof(Storage) !== "undefined"){
+      if (localStorage.dailyinteractions) {
+         localStorage.dailyinteractions = Number(localStorage.dailyinteractions)+1;
+      } else {
+         localStorage.dailyinteractions = 1;
+      }
+      $("#dailyInt").text(localStorage.dailyinteractions);
+   } else {
+      $("#dailyInt").text("Browser does not support storage");
+   }
 }
 
-// Get the item from local sotrage and update the text of the span
+// Get the item from local storage and update the text of the span
 function displayInteractions() {
-   $("#dailyInt").text(localStorage.getItem("Daily Interactions"))
-
+   $("#dailyInt").text(localStorage.getItem("dailyinteractions"))
 }
+
+displayInteractions()
 
 // Button to submit a human interaction 
 $("#submitInt").on("click", function (){
-   addUpDailyConvo();
    displayInteractions();
+   convoCounter()
 })
 
-$("#jokes").on("click", jokesAPI);
+$("#joke-btn").on("click", jokesAPI);
  
