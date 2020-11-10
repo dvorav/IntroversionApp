@@ -1,5 +1,7 @@
+let intSpan = document.querySelector("#dailyInt");
+let totalInteractions =document.querySelector("#total-int");
 
- 
+
 //Pulling Info from WebAPI
 function articleInfo() {
     //WebURL including APIKey
@@ -55,5 +57,27 @@ const settings = {
    })
 
 }
+
+let convoAmount = 0
+
+// Update convoAmount each time button is clicked and set item to local storage
+function addUpDailyConvo () {
+   convoAmount++;
+   console.log(convoAmount)
+   localStorage.setItem("Daily Interactions", convoAmount)
+}
+
+// Get the item from local sotrage and update the text of the span
+function displayInteractions() {
+   $("#dailyInt").text(localStorage.getItem("Daily Interactions"))
+
+}
+
+// Button to submit a human interaction 
+$("#submitInt").on("click", function (){
+   addUpDailyConvo();
+   displayInteractions();
+})
+
 $("#jokes").on("click", jokesAPI);
  
