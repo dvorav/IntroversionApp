@@ -7,7 +7,7 @@ body {
   line-height: 1.75;
   color: #000000;
   padding: 20px;
-  background-image: url(images/yuriy-kovalev-nN1HSDtKdlw-unsplash.jpg);
+  background-image: url("images/yuriy-kovalev-nN1HSDtKdlw-unsplash.jpg");
 }
 
 p {margin-bottom: 1rem;}
