@@ -48,10 +48,10 @@ const settings = {
 
    $.ajax(settings).done(function (response) {
       console.log(response);
-      let setup = $("<p>").text(response.body[0].setup);
-      let punchline = $("<p>").text(response.body[0].punchline);
-      $("#joke-result").append(setup);
-      $("#joke-result").append(punchline);
+      let setup = (response.body[0].setup);
+      let punchline = (response.body[0].punchline);
+      $("#joke-setup").text(setup);
+      $("#joke-punchline").text(punchline);
       console.log(setup); 
       console.log(punchline);   
    })
