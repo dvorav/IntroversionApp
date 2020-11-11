@@ -40,7 +40,7 @@ const settings = {
    "url": "https://dad-jokes.p.rapidapi.com/random/joke",
    "method": "GET",
    "headers": {
-      "x-rapidapi-key": "dc7e6ef494msha69f3a48f05b80dp1609cfjsna8c047a89521",
+      "x-rapidapi-key": "9e4a18b37dmsh2ccd0a3512712cbp122b90jsn01f2ef438658",
       "x-rapidapi-host": "dad-jokes.p.rapidapi.com"
    }
 };
@@ -50,7 +50,7 @@ const settings = {
       console.log(response);
       let setup = (response.body[0].setup);
       let punchline = (response.body[0].punchline);
-      $("#joke-setup").text(setup);
+      $("#joke-set-up").text(setup);
       $("#joke-punchline").text(punchline);
       console.log(setup); 
       console.log(punchline);   
