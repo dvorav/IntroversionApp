@@ -103,6 +103,22 @@ function convoCounter () {
    }
 }
 
+$("#advice-btn").on("click", generateRandomTip)
+
+let tipsArray = ["It's okay to take breaks from people.", "If you're worried about getting stuck in social settings, set an alarm that matches your ringtone. Pretend you've got a call and dip.", "There's nothing wrong with ghosting.", "Videogames are a viable alternative to face-to-face interactions", "When someone calls you, text back: 'In a meeting'", "Bring a buddy and come up with code words.", "No is an acceptable response when people ask you things.", "You're dope. Don't foget that.", "Add some extroverts to your squad.", "Afraid of rejection or embarassment? Remember that ice cream exists."]
+
+function generateRandomTip() {
+   for (let i = 0; i < 1; i++) {
+     let randomTipNum = Math.floor(Math.random() * tipsArray.length)
+     let randomTipText = tipsArray[randomTipNum]
+     console.log("Hello", randomTipNum)
+     console.log(randomTipText)
+
+     $("#daily-tip-array").text(randomTipText)
+
+   }
+ }
+
 // Get the item from local storage and update the text of the span
 function displayInteractions() {
    $("#dailyInt").text(localStorage.getItem("dailyinteractions"))
