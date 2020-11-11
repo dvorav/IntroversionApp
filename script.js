@@ -5,29 +5,61 @@ let totalInteractions =document.querySelector("#total-int");
 //Pulling Info from WebAPI
 function articleInfo() {
     //WebURL including APIKey
-let webUrl = "https://api.nytimes.com/svc/topstories/v2/us.json?api-key=XdqYsMJQiUIzGOnjulFokGyATyRNJe2K"
+let input = $("#news-input").val()
+let webUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+ input +"&api-key=XdqYsMJQiUIzGOnjulFokGyATyRNJe2K"
+
+// $.ajax( {
+// url: webUrl,
+// method: "GET",
+// }).then(function (response) {
+   // let results = web.response.docs[0].abstract;
+   //  console.log(results)
+// //Generating random number for articles
+//    const randomArticle = results[Math.floor(Math.random() * results.length)];
+//    console.log(response)  
+//    //console.log("Title: " + randomArticle.title + " Abstract:" + randomArticle.abstract + " Url: " + randomArticle.url)
+//    //Title of article
+// let title = randomArticle.title;
+//    $("#news-titleHtml").text(title)
+// // Abstract from article
+// let abstract = randomArticle.abstract;
+// $("#news-abstractHtml").text(abstract)
+// //Url for article
+// let url = randomArticle.url
+// $("#news-urlHtml").attr({"href": url, "target": "_blank"})
+// $("#news-urlHtml").text("Click for full article")
+// //Button click
+// })}
+
 
 $.ajax( {
-url: webUrl,
-method: "GET",
-}).then(function (response) {
- let results = response.results;
-//Generating random number for articles
-   const randomArticle = results[Math.floor(Math.random() * results.length)];
-   console.log(response)  
-   //console.log("Title: " + randomArticle.title + " Abstract:" + randomArticle.abstract + " Url: " + randomArticle.url)
-   //Title of article
-let title = randomArticle.title;
-   $("#news-titleHtml").text(title)
-// Abstract from article
-let abstract = randomArticle.abstract;
-$("#news-abstractHtml").text(abstract)
-//Url for article
-let url = randomArticle.url
+   url: webUrl,
+   method: "GET", 
+}).then(function (web) {
+   console.log(web)
+
+// Generate random number 
+let i = [Math.floor(Math.random() * 10)]
+
+//Headline
+   let title = web.response.docs[i].headline.main;
+  $("#news-titleHtml").text(title)
+//Abstract 
+  let abstract = web.response.docs[i].abstract;
+  $("#news-abstractHtml").text(abstract)
+
+//Url
+ let url = web.response.docs[i].web_url
 $("#news-urlHtml").attr({"href": url, "target": "_blank"})
 $("#news-urlHtml").text("Click for full article")
-//Button click
-})}
+
+
+  
+
+ console.log(results  + "Resultss")
+
+})
+}
 $("#news-btn").on("click", articleInfo)
 
 //Joke Api
@@ -48,10 +80,10 @@ const settings = {
 
    $.ajax(settings).done(function (response) {
       console.log(response);
-      let setup = $("<p>").text(response.body[0].setup);
-      let punchline = $("<p>").text(response.body[0].punchline);
-      $("#joke-result").append(setup);
-      $("#joke-result").append(punchline);
+      let setup = (response.body[0].setup);
+      let punchline = (response.body[0].punchline);
+      $("#joke-setup").text(setup);
+      $("#joke-punchline").text(punchline);
       console.log(setup); 
       console.log(punchline);   
    })
