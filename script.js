@@ -1,5 +1,7 @@
+let intSpan = document.querySelector("#dailyInt");
+let totalInteractions =document.querySelector("#total-int");
 
- 
+
 //Pulling Info from WebAPI
 function articleInfo() {
     //WebURL including APIKey
@@ -16,17 +18,17 @@ method: "GET",
    //console.log("Title: " + randomArticle.title + " Abstract:" + randomArticle.abstract + " Url: " + randomArticle.url)
    //Title of article
 let title = randomArticle.title;
-   $("#titleHtml").text(title)
+   $("#news-titleHtml").text(title)
 // Abstract from article
 let abstract = randomArticle.abstract;
-$("#abstractHtml").text(abstract)
+$("#news-abstractHtml").text(abstract)
 //Url for article
 let url = randomArticle.url
-$("#urlHtml").attr({"href": url, "target": "_blank"})
-$("#urlHtml").text("Click for full article")
+$("#news-urlHtml").attr({"href": url, "target": "_blank"})
+$("#news-urlHtml").text("Click for full article")
 //Button click
 })}
-$("#btn").on("click", articleInfo)
+$("#news-btn").on("click", articleInfo)
 
 //Joke Api
 
@@ -46,14 +48,41 @@ const settings = {
 
    $.ajax(settings).done(function (response) {
       console.log(response);
-      let setup = $("<p>").text(response.body[0].setup);
-      let punchline = $("<p>").text(response.body[0].punchline);
-      $("#jokes-result").append(setup);
-      $("#jokes-result").append(punchline);
+      let setup = (response.body[0].setup);
+      let punchline = (response.body[0].punchline);
+      $("#joke-setup").text(setup);
+      $("#joke-punchline").text(punchline);
       console.log(setup); 
       console.log(punchline);   
    })
 
 }
-$("#jokes").on("click", jokesAPI);
+
+function convoCounter () {
+   if (typeof(Storage) !== "undefined"){
+      if (localStorage.dailyinteractions) {
+         localStorage.dailyinteractions = Number(localStorage.dailyinteractions)+1;
+      } else {
+         localStorage.dailyinteractions = 1;
+      }
+      $("#dailyInt").text(localStorage.dailyinteractions);
+   } else {
+      $("#dailyInt").text("Browser does not support storage");
+   }
+}
+
+// Get the item from local storage and update the text of the span
+function displayInteractions() {
+   $("#dailyInt").text(localStorage.getItem("dailyinteractions"))
+}
+
+displayInteractions()
+
+// Button to submit a human interaction 
+$("#submitInt").on("click", function (){
+   displayInteractions();
+   convoCounter()
+})
+
+$("#joke-btn").on("click", jokesAPI);
  
