@@ -35,13 +35,13 @@ h4 {font-size: 1.25rem;}
 small, .text_small {font-size: 0.8rem;}
 
 #Introversion-title {
-  background-color: #61a4c7;
+ 
   margin-top: 0px;
   padding: 5px;
   text-align: center;
 }
 
-button {
+/* button {
     background-color: navy;
     color: white;
     border: none;
@@ -49,16 +49,16 @@ button {
     padding: 5px;
     width: 150px;
     font-size: 1.25rem;
-}
+} */
 
-button:hover {
+/* button:hover {
    opacity: 75%;
 }
 
 .advice-section, .joke-section, .news-section, .container {
     padding: 5px;
     
-}
+} */
 
 
 /* @media screen and (max-width: 768px) {
