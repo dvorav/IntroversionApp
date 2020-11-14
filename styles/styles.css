@@ -7,7 +7,7 @@ body {
   line-height: 1.75;
   color: #000000;
   padding: 20px;
-  background-image: url(images/yuriy-kovalev-nN1HSDtKdlw-unsplash.jpg);
+  /* background-image: url(images/yuriy-kovalev-nN1HSDtKdlw-unsplash.jpg); */
 }
 
 p {margin-bottom: 1rem;}
@@ -36,8 +36,6 @@ small, .text_small {font-size: 0.8rem;}
 
 #Introversion-title {
  
-  margin-top: 0px;
-  padding: 5px;
   text-align: center;
 }
 
@@ -50,6 +48,8 @@ small, .text_small {font-size: 0.8rem;}
     width: 150px;
     font-size: 1.25rem;
 } */
+
+
 
 /* button:hover {
    opacity: 75%;
