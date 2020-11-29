@@ -33,34 +33,7 @@ function articleInfo() {
 }
 $("#news-btn").on("click", articleInfo);
 
-//Joke Api Version 1 Not working properly
-// Creating an AJAX call for the joke.
-// function jokesAPI() {
-//   const settings = {
-//     async: true,
-//     crossDomain: true,
-//     url: "https://dad-jokes.p.rapidapi.com/random/joke",
-//     method: "GET",
-//     headers: {
-//       "x-rapidapi-key": "9e4a18b37dmsh2ccd0a3512712cbp122b90jsn01f2ef438658",
-//       "x-rapidapi-host": "dad-jokes.p.rapidapi.com",
-//     },
-//   };
-//   $.ajax(settings).done(function (response) {
-//     console.log(response);
-//     let setup = response.body[0].setup;
-//     let punchline = response.body[0].punchline;
-//     $("#joke-set-up").text(setup);
-//     $("#joke-punchline").text(punchline);
-//     console.log(setup);
-//     console.log(punchline);
-//   });
-// }
-// $("#joke-btn").on("click", jokesAPI);
-
-
-
-// Joke Api Version 2 (Working Properly) Different Api
+// Joke Api
 function dadJokes() {
   $.getJSON("https://icanhazdadjoke.com/", function (dadJokeUrl) {
     //console.log("Here's some data on jokes: ", dadJokeUrl);
