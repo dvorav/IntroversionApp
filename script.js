@@ -30,6 +30,12 @@ function articleInfo() {
     $("#news-urlHtml").attr({ href: url, target: "_blank" });
     $("#news-urlHtml").text("Click for full article");
   });
+  let newsurlHtmlEl = document.getElementById("news-urlHtml")
+  newsurlHtmlEl.classList.remove("hideButton");
+  newsurlHtmlEl.classList.add("showButton");
+  let dailyNewsResultEl = document.getElementById("daily-news-result")
+  dailyNewsResultEl.classList.remove("hideSection")
+  dailyNewsResultEl.classList.add("showSection")
 }
 $("#news-btn").on("click", articleInfo);
 

@@ -39,6 +39,82 @@ small, .text_small {font-size: 0.8rem;}
   text-align: center;
 }
 
+/* Code from lines below added for resubmit to hide button and add borders*/
+.hideButton {
+  display: none;
+}
+
+.showButton {
+  display: visible;
+  background-color: #1a237e !important;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  vertical-align: middle;
+  z-index: 1;
+  transition: .3s ease-out;
+  text-decoration: none;
+  color: #fff;
+  background-color: #26a69a;
+  text-align: center;
+  letter-spacing: .5px;
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 16px;
+  text-transform: uppercase;
+  }
+
+  #daily-news-result {
+    border: solid;
+    border-color: #7e1a76 !important;
+    border-radius: 25px; 
+  }
+
+  .advice-section {
+    border: solid;
+    border-color: #1a237e !important;
+    border-radius: 25px; 
+  }
+
+  .joke-section {
+    border: solid;
+    border-color: #1a237e !important;
+    border-radius: 25px; 
+  }
+
+  .hideSection {
+    display: none;
+  }
+
+  .showSection {
+    display: visible;
+  }
+
+  .news-section {
+    border: solid;
+    border-color: #1a237e !important;
+    border-radius: 25px; 
+    padding-bottom: 25px;
+    padding-left: 5px;
+  }
+
+  #human-interactions {
+    border: solid;
+    border-color: #1a237e !important;
+    border-radius: 25px; 
+    padding-bottom: 25px;
+    padding-left: 5px;
+  }
+
+
+
+/* Commented Out Code Below From Original Assignment and Left For Future Development of App */
 /* button {
     background-color: navy;
     color: white;
