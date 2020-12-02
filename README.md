@@ -11,7 +11,7 @@ I WANT a website to assist me with small talk by giving me current events and jo
 SO THAT I can feel more comfortable in daily conversations.<br>
 
 ## Link to Site and GitHub Repository:
-[Here is a link to the deployed website](https://dvorav.github.io/Project-1/)<br>
+[Here is a link to the deployed website](https://dvorav.github.io/IntroversionApp/)<br>
 [Here is a link to the repository](https://github.com/dvorav/Project-1)<br>
 
 ## Screenshots
