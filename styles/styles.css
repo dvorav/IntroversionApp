@@ -68,6 +68,7 @@ small, .text_small {font-size: 0.8rem;}
   line-height: 36px;
   padding: 0 16px;
   text-transform: uppercase;
+  margin-left: 25px;
   }
 
   #daily-news-result {
